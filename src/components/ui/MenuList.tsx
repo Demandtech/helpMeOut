@@ -1,12 +1,10 @@
-"use client";
+import dynamic from "next/dynamic";
 
-import { lazy } from "react";
-
-export const Listbox = lazy(() =>
+export const Listbox = dynamic(() =>
   import("@nextui-org/listbox").then((module) => ({ default: module.Listbox })),
 );
 
-export const ListboxItem = lazy(() =>
+export const ListboxItem = dynamic(() =>
   import("@nextui-org/listbox").then((module) => ({
     default: module.ListboxItem,
   })),

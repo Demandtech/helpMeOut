@@ -8,6 +8,10 @@
   --black: #141414;
 }
 
+.link-hover {
+  @apply hover:opacity-50 transition-opacity ease-linear duration-200;
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

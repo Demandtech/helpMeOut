@@ -1,9 +1,9 @@
-import Header from "@/components/layouts/auth/Header";
+import { AuthHeader } from "@/components/layouts";
 
 function AuthLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <Header />
+      <AuthHeader />
       {children}
     </>
   );
