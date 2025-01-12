@@ -1,10 +1,11 @@
+import { Hero } from "@/components/home";
 import { PublicFooter, PublicHeader } from "@/components/layouts";
 
 function HomePage() {
   return (
-    <div>
+    <div className="bg-[#F4F6F8]">
       <PublicHeader />
-      <h1>Home page</h1>
+      <Hero />
       <PublicFooter />
     </div>
   );
