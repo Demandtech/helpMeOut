@@ -1,10 +1,11 @@
-import Header from "@/components/layouts/public/Header";
+import { PublicFooter, PublicHeader } from "@/components/layouts";
 
 function HomePage() {
   return (
     <div>
-      <Header />
+      <PublicHeader />
       <h1>Home page</h1>
+      <PublicFooter />
     </div>
   );
 }

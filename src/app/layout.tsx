@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/system";
-
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/layouts/Footer";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://helpmeout-silk.vercel.app/"),
   title: "HelpMeOut",
   description: "Screen sharing and video chat for developers",
   keywords: ["screen sharing", "video chat", "developers", "share video"],
+  alternates: {
+    languages: {
+      en: "/en-US",
+    },
+  },
   openGraph: {
     title: "HelpMeOut",
     description: "Screen sharing and video chat for developers",
-    url: "https://yourwebsite.com",
+    url: "/",
     siteName: "HelpMeOut",
     images: [
       {
@@ -38,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -59,7 +66,6 @@ export default function RootLayout({
       <link rel="manifest" href="/favicons/site.webmanifest" />
       <body>
         <NextUIProvider>{children}</NextUIProvider>
-        <Footer />
       </body>
     </html>
   );

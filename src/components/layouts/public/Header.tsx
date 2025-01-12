@@ -17,10 +17,10 @@ function Header() {
         </div>
         <nav className="lg:block hidden">
           <ul className="flex gap-10 font-medium text-black">
-            <li>
+            <li className="link-hover">
               <Link href="#feature">Feature</Link>
             </li>
-            <li>
+            <li className="link-hover">
               <Link href="#howitworks">How It Works</Link>
             </li>
           </ul>
@@ -32,10 +32,7 @@ function Header() {
             className="font-semibold px-0 lg:px-5"
             size="lg"
             radius="none"
-            onPress={() => {
-              console.log("Get Started");
-              router?.push("/auth/login");
-            }}
+            onPress={() => router?.push("/auth")}
           >
             Get Started
           </Button>

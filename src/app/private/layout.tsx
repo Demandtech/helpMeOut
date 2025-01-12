@@ -1,9 +1,9 @@
-import Header from "@/components/layouts/private/Header";
+import { PrivateHeader } from "@/components/layouts";
 
 function PrivateLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <Header />
+      <PrivateHeader />
       {children}
     </>
   );

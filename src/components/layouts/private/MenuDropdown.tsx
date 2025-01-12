@@ -10,6 +10,7 @@ import {
 } from "@/components/svgs";
 import Avatar from "@/components/ui/Avatar";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 function MenuDropdown({
   setOpenMenu,
@@ -22,6 +23,8 @@ function MenuDropdown({
   subMenu: boolean;
   setSubMenu: Dispatch<SetStateAction<boolean>>;
 }) {
+  const router = useRouter();
+
   const toggleMenu = () => {
     setOpenMenu((prev) => !prev);
     setSubMenu((prev) => !prev);
@@ -31,6 +34,8 @@ function MenuDropdown({
     switch (key) {
       case "name":
         setSubMenu((prev) => !prev);
+      case "logout":
+        router.push("/auth/login");
       default:
         break;
     }

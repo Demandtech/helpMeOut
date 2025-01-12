@@ -1,7 +1,7 @@
-import { lazy } from "react";
+import dynamic from "next/dynamic";
 
-const Button = lazy(() =>
-  import("@nextui-org/button").then((module) => ({ default: module.Button })),
+const Button = dynamic(() =>
+  import("@nextui-org/button").then((module) => ({ default: module.Button }))
 );
 
 export default Button;
