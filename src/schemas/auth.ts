@@ -9,7 +9,7 @@ export const authSchema = yup.object().shape({
     .matches(/[0-9]/, "Password must include at least one number")
     .matches(
       /[!@#$%^&*(),.?":{}|<>]/,
-      "Password must include at least one special character"
+      "Password must include at least one special character",
     )
     .required("Password is required"),
 });
