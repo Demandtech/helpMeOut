@@ -34,8 +34,10 @@ function MenuDropdown({
     switch (key) {
       case "name":
         setSubMenu((prev) => !prev);
+        break;
       case "logout":
-        router.push("/auth/login");
+        router.push("/auth");
+        break;
       default:
         break;
     }
@@ -55,10 +57,15 @@ function MenuDropdown({
       <div className="relative h-full w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.9, height: 55 }}
-          animate={{ opacity: 1, scale: 1, height: subMenu ? 200 : 55 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            height: subMenu ? "100%" : 55,
+            maxHeight: 230,
+          }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, type: "spring" }}
-          className="max-w-[260px] w-full bg-white absolute right-20 top-20 rounded-lg overflow-hidden"
+          className="max-w-[200px] flex lg:max-w-[260px] w-full bg-white absolute right-3 lg:right-20 top-14 lg:top-20 rounded-lg overflow-hidden"
         >
           <Listbox
             classNames={{
@@ -77,12 +84,14 @@ function MenuDropdown({
                   <ChevronDown />
                 </motion.div>
               }
-              startContent={<Avatar size="sm" className="h-7 w-7" />}
+              startContent={
+                <Avatar size="sm" className="min-w-5 min-h-5 lg:h-7 lg:w-7" />
+              }
               key="name"
-              className="border-b-2 rounded-none px-5 py-3"
+              className="border-b-2 rounded-none px-2 lg:px-5 py-3"
               textValue="John Mark"
             >
-              <p className="min-w-[120px]">John Mark</p>
+              <p className="min-w-[120px] text-xs lg:text-sm">John Mark</p>
             </ListboxItem>
 
             <ListboxSection>
@@ -90,7 +99,7 @@ function MenuDropdown({
                 startContent={<Settings />}
                 endContent={<ChevronRight />}
                 key="settings"
-                className="rounded-none px-5 py-2"
+                className="rounded-none px-2 lg:px-5 py-2"
                 textValue="Settings and Privacy"
               >
                 <span className="text-xs">Settings and Privacy</span>
@@ -99,7 +108,7 @@ function MenuDropdown({
                 startContent={<Moon />}
                 endContent={<ChevronRight />}
                 key="display"
-                className="rounded-none px-5 py-2"
+                className="rounded-none px-2 lg:px-5 py-2"
                 textValue="Display and Accessibility"
               >
                 <span className="text-xs">Display and Accessibility</span>
@@ -108,7 +117,7 @@ function MenuDropdown({
                 startContent={<QuestionMark />}
                 endContent={<ChevronRight />}
                 key="support"
-                className="rounded-none px-5 py-2"
+                className="rounded-none px-2 lg:px-5 py-2"
                 textValue="Help and Support"
               >
                 <span className="text-xs"> Help and Support</span>
@@ -116,7 +125,7 @@ function MenuDropdown({
               <ListboxItem
                 startContent={<Logout className="stroke-danger" />}
                 key="logout"
-                className="!text-danger rounded-none px-5 py-2"
+                className="!text-danger rounded-none px-2 lg:px-5 py-2"
                 textValue="Logout"
               >
                 <span className="text-xs">Log Out</span>
