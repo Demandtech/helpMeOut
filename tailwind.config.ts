@@ -12,12 +12,14 @@ export default {
     extend: {
       colors: {
         primary: `var(--primary)`,
+        secondary: `var(--secondary)`,
         black: `var(--black)`,
         white: `var(--white)`,
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         sora: ["Sora", "sans-serif"],
+        work: ["Work sans", "sans-serif"],
       },
       // backgroundImage: {
       //   "hero-top": "url('/public/assets/home/hero-bg-top.png')",

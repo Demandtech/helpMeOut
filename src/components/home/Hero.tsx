@@ -5,13 +5,13 @@ import Image from "next/image";
 
 function Hero() {
   return (
-    <section className="lg:px-20 px-3 bg-white">
-      <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 py-10 lg:py-20 items-center">
+    <section className="bg-white">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 py-10 px-3 lg:px-20 lg:py-20 items-center max-w-[1440px] mx-auto">
         <div className="lg:max-w-[50%] flex flex-col gap-5">
-          <h1 className="font-bold text-black text-4xl lg:text-6xl">
+          <h1 className="font-bold text-black text-4xl lg:text-6xl font-sora">
             Show Them <br /> Don’t Just Tell
           </h1>
-          <p className="text-sm lg:text-xl opacity-75">
+          <p className="text-sm lg:text-xl opacity-75 font-inter">
             Help your friends and loved ones by creating and sending videos on
             how to get things done on a website.
           </p>
@@ -33,7 +33,7 @@ function Hero() {
               size="lg"
               radius="sm"
               color="primary"
-              className="group text-sm lg:text-base"
+              className="group text-sm lg:text-base font-work"
             >
               Install HelpMeOut
             </Button>

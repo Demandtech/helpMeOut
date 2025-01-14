@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/system";
-import { Inter, Sora } from "next/font/google";
+import { Inter, Sora, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const sora = Sora({ subsets: ["latin"] });
+const workSans = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://helpmeout-silk.vercel.app/"),
@@ -46,7 +47,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.className} ${sora.className}`}>
+    <html
+      lang="en"
+      className={`${workSans.className} ${inter.className} ${sora.className}`}
+    >
       <link
         rel="apple-touch-icon"
         sizes="180x180"
