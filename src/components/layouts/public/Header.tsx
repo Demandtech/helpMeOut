@@ -8,7 +8,7 @@ function Header() {
   const router = useRouter();
 
   return (
-    <header className=" border-b-2 border-[#adadad]">
+    <header className="bg-white border-b-2 border-[#adadad] font-inter sticky top-0 z-50">
       <div className="max-w-[1440px] mx-auto px-3 lg:px-20 flex items-center justify-between py-5">
         <div>
           <Link href="/">

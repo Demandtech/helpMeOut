@@ -23,4 +23,4 @@ jobs:
         run: npm run lint
 
       - name: Check Code Formatting
-        run: npx prettier --check .
+        run: npx prettier --check --write .

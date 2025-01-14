@@ -3,7 +3,7 @@ import { Logo } from "../../svgs";
 
 function Footer() {
   return (
-    <footer className="bg-primary py-10">
+    <footer className="bg-primary py-10 font-inter">
       <div className="max-w-[1440px] mx-auto px-3 lg:px-20 flex flex-col lg:flex-row justify-between py-5 gap-10">
         <div className="lg:pt-5 lg:w-2/5">
           <Link href="/">

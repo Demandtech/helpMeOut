@@ -4,8 +4,13 @@
 
 :root {
   --primary: #120b48;
+  --secondary: #616163;
   --white: #ffffff;
   --black: #141414;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .link-hover {
