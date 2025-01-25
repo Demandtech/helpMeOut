@@ -7,7 +7,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 function Hero() {
-  
   const transition = {
     duration: 0.5,
     ease: [0, 0.71, 0.2, 1.01],
@@ -17,7 +16,7 @@ function Hero() {
 
   return (
     <section className="bg-white">
-      <div className="flex flex-col lg:flex-row gap-5 lg:gap-0 py-10 px-3 lg:px-20 lg:py-20 items-center max-w-[1440px] mx-auto">
+      <div className="flex flex-col-reverse lg:flex-row gap-5 lg:gap-0 py-10 px-3 lg:px-20 lg:py-20 items-center max-w-[1440px] mx-auto">
         <div className="lg:max-w-[50%] flex flex-col gap-5">
           <motion.h1
             initial={{ y: 20, opacity: 0 }}
@@ -83,7 +82,7 @@ function Hero() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={transition}
+            transition={{ delay: 0.5, ...transition }}
             className="absolute bottom-0 left-0 "
             style={{
               background: "url(assets/home/hero-bg-bottom.webp) no-repeat",

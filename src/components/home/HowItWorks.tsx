@@ -1,6 +1,19 @@
+"use client";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 
 function HowItWorks() {
+  const ref = useRef(null);
+  const isListInView = useInView(ref, { once: false });
+
+  const transition = {
+    duration: 0.5,
+    ease: [0, 0.71, 0.2, 1.01],
+    stiffness: 100,
+    type: "tween",
+  };
+
   return (
     <section id="howitworks">
       <div className="bg-white py-10 lg:py-20 px-3 lg:px-20">
@@ -9,10 +22,16 @@ function HowItWorks() {
             How it works
           </h2>
         </div>
-        <div className="flex flex-wrap gap-10 lg:gap-20">
-          {theHows.map((how) => {
+        <div ref={ref} className="flex flex-wrap gap-10 lg:gap-20">
+          {theHows.map((how, index) => {
             return (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={isListInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  delay: index * 0.2,
+                  ...transition,
+                }}
                 key={how.number}
                 className="text-center flex flex-col gap-2 lg:gap-4 px-1 flex-1 min-w-[280px]"
               >
@@ -32,7 +51,7 @@ function HowItWorks() {
                     src={"/assets/home/howitwork-img.webp"}
                   />
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
