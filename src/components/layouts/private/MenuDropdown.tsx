@@ -46,9 +46,9 @@ function MenuDropdown({
   return (
     <motion.div
       style={{
-        background: "rgba(0, 0, 0, 0.32)",
+        background: "",
       }}
-      className="fixed top-0 left-0 w-full h-full"
+      className="fixed top-0 left-0 w-full h-full z-40 backdrop-brightness-50"
       onClick={toggleMenu}
       initial={{ opacity: 0 }}
       animate={{ opacity: openMenu ? 1 : 0 }}
@@ -60,8 +60,7 @@ function MenuDropdown({
           animate={{
             opacity: 1,
             scale: 1,
-            height: subMenu ? "100%" : 55,
-            maxHeight: 230,
+            height: subMenu ? 230 : 55,
           }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3, type: "spring" }}

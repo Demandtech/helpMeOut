@@ -29,7 +29,7 @@ export default function LoginPage() {
   const handleAuthentication = (data: AuthFormData) => {
     if (data) {
       console.log(data);
-      router.push("/private/videos");
+      router.push("/repositories/private/files");
     }
   };
 

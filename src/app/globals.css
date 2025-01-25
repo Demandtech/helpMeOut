@@ -17,6 +17,10 @@ html {
   @apply hover:opacity-50 transition-opacity ease-linear duration-200;
 }
 
+.container {
+  @apply px-3 lg:px-20 max-w-[1440px];
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

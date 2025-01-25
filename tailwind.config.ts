@@ -6,7 +6,7 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/(avatar|button|image|input|listbox|ripple|spinner|form|divider).js",
+    "./node_modules/@nextui-org/theme/dist/components/(avatar|button|dropdown|image|input|listbox|ripple|spinner|menu|divider|popover|form).js"
   ],
   theme: {
     extend: {
@@ -21,10 +21,7 @@ export default {
         sora: ["Sora", "sans-serif"],
         work: ["Work sans", "sans-serif"],
       },
-      // backgroundImage: {
-      //   "hero-top": "url('/public/assets/home/hero-bg-top.png')",
-      //   "footer-texture": "url('/public/images/footer-texture.png')",
-      // },
+      
     },
   },
   plugins: [nextui()],
