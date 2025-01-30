@@ -425,7 +425,7 @@ export function RevisitRecording(props: IconSvgProps) {
   );
 }
 
-export function Search() {
+export function Search(props: IconSvgProps) {
   return (
     <svg
       width="20"
@@ -433,6 +433,7 @@ export function Search() {
       viewBox="0 0 20 21"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M9.58268 18.0001C13.9549 18.0001 17.4993 14.4557 17.4993 10.0834C17.4993 5.71116 13.9549 2.16675 9.58268 2.16675C5.21043 2.16675 1.66602 5.71116 1.66602 10.0834C1.66602 14.4557 5.21043 18.0001 9.58268 18.0001Z"
@@ -452,7 +453,7 @@ export function Search() {
   );
 }
 
-export function LinkIcon() {
+export function LinkIcon(props: IconSvgProps) {
   return (
     <svg
       width="24"
@@ -460,6 +461,7 @@ export function LinkIcon() {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M14.9902 17.5H16.5002C19.5202 17.5 22.0002 15.03 22.0002 12C22.0002 8.98 19.5302 6.5 16.5002 6.5H14.9902"
@@ -486,7 +488,7 @@ export function LinkIcon() {
   );
 }
 
-export function More() {
+export function More(props: IconSvgProps) {
   return (
     <svg
       width="24"
@@ -494,6 +496,7 @@ export function More() {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19C14 17.9 13.1 17 12 17C10.9 17 10 17.9 10 19Z"

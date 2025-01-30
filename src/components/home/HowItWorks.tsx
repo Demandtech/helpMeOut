@@ -18,9 +18,14 @@ function HowItWorks() {
     <section id="howitworks">
       <div className="bg-white py-10 lg:py-20 px-3 lg:px-20">
         <div className="text-center mb-10">
-          <h2 className="font-bold text-2xl lg:text-4xl text-black font-sora">
+          <motion.h2
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={transition}
+            className="font-bold text-2xl lg:text-4xl text-black font-sora"
+          >
             How it works
-          </h2>
+          </motion.h2>
         </div>
         <div ref={ref} className="flex flex-wrap gap-10 lg:gap-20">
           {theHows.map((how, index) => {
@@ -44,13 +49,21 @@ function HowItWorks() {
                 <p className="text-secondary text-sm md:text-basetext-sm md:text-base lg:text-xl">
                   {how.text}
                 </p>
-                <div className="relative h-[250px]">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.7 }}
+                  animate={isListInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{
+                    delay: index * 0.3,
+                    ...transition,
+                  }}
+                  className="relative h-[250px]"
+                >
                   <Image
                     fill
                     alt="recording image"
                     src={"/assets/home/howitwork-img.webp"}
                   />
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}

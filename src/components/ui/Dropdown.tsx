@@ -1,11 +1,12 @@
 "use client";
+
+import { ReactNode } from "react";
 import {
   Dropdown,
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/dropdown";
-import { ReactNode } from "react";
 
 export default function App({
   triggerContent,
@@ -14,15 +15,26 @@ export default function App({
   triggerContent: ReactNode;
   items: { key: string; label: string }[];
 }) {
+  const handleSelectOption = (key: string) => {
+    if (!key) return;
+
+    switch (key) {
+      case "view":
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <Dropdown radius="sm">
       <DropdownTrigger>{triggerContent}</DropdownTrigger>
-      <DropdownMenu aria-label="Dynamic Actions" items={items}>
+      <DropdownMenu aria-label="Dropdown menu" items={items}>
         {(item) => (
           <DropdownItem
             key={item.key}
             className={item.key === "delete" ? "text-danger" : ""}
             color={item.key === "delete" ? "danger" : "default"}
+            onPress={() => handleSelectOption(item.key)}
           >
             {item.label}
           </DropdownItem>

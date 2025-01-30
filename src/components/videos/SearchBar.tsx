@@ -7,16 +7,16 @@ import { Search } from "../svgs";
 function SearchBar() {
   return (
     <section className="border-b-2">
-      <div className="container flex items-center justify-between py-10">
+      <div className="container flex flex-col lg:flex-row lg:items-center justify-between gap-10 py-10">
         <div>
-          <h2 className="text-black font-bold text-[2rem] font-sora leading-10">
+          <h2 className="text-black font-bold text-2xl lg:text-[2rem] font-sora leading-10">
             Hello, John Mark
           </h2>
-          <p className="text-lg text-secondary">
+          <p className="text-base lg:text-lg text-secondary">
             Here are your recorded videos
           </p>
         </div>
-        <form className="max-w-sm w-full">
+        <form className="max-w-sm w-5/6 ml-auto">
           <Input
             startContent={<Search />}
             radius="sm"

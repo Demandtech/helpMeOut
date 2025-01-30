@@ -22,12 +22,22 @@ function Features() {
     <section id="feature" className="my-10 bg-white py-10">
       <div className="px-3 lg:px-20 max-w-[1440px] mx-auto">
         <div className="text-center mb-10">
-          <h2 className="font-bold text-2xl lg:text-4xl text-black font-sora">
+          <motion.h2
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={transition}
+            className="font-bold text-2xl lg:text-4xl text-black font-sora"
+          >
             Features
-          </h2>
-          <p className="text-secondary font-work text-base lg:text-xl">
+          </motion.h2>
+          <motion.p
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={transition}
+            className="text-secondary font-work text-base lg:text-xl"
+          >
             Key Highlights of Our Extension
-          </p>
+          </motion.p>
         </div>
         <div className="grid lg:grid-cols-2 gap-10">
           <div className=" col-span-1">

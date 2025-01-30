@@ -45,9 +45,6 @@ function MenuDropdown({
 
   return (
     <motion.div
-      style={{
-        background: "",
-      }}
       className="fixed top-0 left-0 w-full h-full z-40 backdrop-brightness-50"
       onClick={toggleMenu}
       initial={{ opacity: 0 }}

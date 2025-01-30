@@ -8,7 +8,7 @@ function RecentFiles({ data }: { data: VideoList }) {
   return (
     <div>
       <h6 className="text-secondary font-medium text-lg mb-2">Recent files</h6>
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid lg:grid-cols-2 gap-10">
         {data.map((video, index) => (
           <VideoReview video={video} key={index} />
         ))}
