@@ -8,23 +8,19 @@ import {
   DropdownItem,
 } from "@nextui-org/dropdown";
 
-export default function App({
-  triggerContent,
-  items,
-}: {
-  triggerContent: ReactNode;
-  items: { key: string; label: string }[];
-}) {
-  const handleSelectOption = (key: string) => {
-    if (!key) return;
+interface DropdownItemType {
+  key: string;
+  label: string;
+}
 
-    switch (key) {
-      case "view":
-        break;
-      default:
-        break;
-    }
-  };
+interface AppProps {
+  triggerContent: ReactNode;
+  items: DropdownItemType[];
+  onSelect: (key: string) => void; // Function to handle selection dynamically
+}
+
+export default function App({ triggerContent, items, onSelect }: AppProps) {
+
   return (
     <Dropdown radius="sm">
       <DropdownTrigger>{triggerContent}</DropdownTrigger>
@@ -34,7 +30,7 @@ export default function App({
             key={item.key}
             className={item.key === "delete" ? "text-danger" : ""}
             color={item.key === "delete" ? "danger" : "default"}
-            onPress={() => handleSelectOption(item.key)}
+            onPress={() => onSelect(item.key)}
           >
             {item.label}
           </DropdownItem>

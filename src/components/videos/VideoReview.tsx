@@ -1,17 +1,42 @@
 "use client";
 
 import { Video } from "@/types/app";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { More, LinkIcon } from "../svgs";
 import Image from "next/image";
-import Link from "next/link";
 
-import { Dropdown } from "../ui";
+import { Dropdown, Input } from "../ui";
 import { Button } from "@nextui-org/button";
+import { useRouter } from "next/navigation";
 
 function VideoReview({ video }: { video: Video }) {
+  const router = useRouter();
+  const [isReadOnly, setIsReadOnly] = useState<boolean>(true);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const handleSelectOption = (key: string) => {
+    if (!key) return;
+
+    switch (key) {
+      case "view":
+        router.push("/repositories/private/files/videoId");
+        break;
+      case "rename":
+        setIsReadOnly(false);
+        // setTimeout(() => inputRef.current?.focus(), 0);
+        inputRef.current?.focus();
+        break;
+      case "delete":
+        console.log("delete");
+        break;
+      default:
+        break;
+    }
+  };
   return (
-    <div className=" p-5 rounded-3xl shadow-md lg:shadow-xl hover:shadow-md transition-all duration-300 ease-in-out cursor-crosshair">
+    <div
+      onClick={() => router.push("/repositories/private/files/:id")}
+      className=" p-5 rounded-3xl shadow-md lg:shadow-xl hover:shadow-md transition-all duration-300 ease-in-out cursor-pointer active:translate-y-1"
+    >
       <div className="relative w-full min-h-[210px] rounded-xl overflow-hidden">
         <Image
           className="object-cover object-top"
@@ -22,17 +47,25 @@ function VideoReview({ video }: { video: Video }) {
         />
       </div>
       <div className="flex items-center justify-between  pt-5">
-        <Link
-          href="/repositories/private/files/:id"
-          className="font-medium text-base lg:text-lg"
-        >
-          {video?.title}
-        </Link>
+        <div className="w-full ">
+          <Input
+            ref={inputRef}
+            onClick={(e) => e.stopPropagation()}
+            type="text"
+            value={video?.title}
+            className="w-full font-medium text-base lg:text-lg focus-within:border-none data-[rename=false]:outline-none"
+            readOnly={isReadOnly}
+            data-rename={`${!isReadOnly}`}
+            autoFocus={!isReadOnly}
+          />
+        </div>
+
         <div className="flex items-center">
           <Button isIconOnly variant="light">
             <LinkIcon className="w-5 lg:w-6" />
           </Button>
           <Dropdown
+            onSelect={handleSelectOption}
             items={items}
             triggerContent={
               <Button isIconOnly variant="light">
