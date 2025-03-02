@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { useState } from "react";
 import MenuDropdown from "./MenuDropdown";
+import routes from "@/configs/routes";
 
 function Header() {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -17,7 +18,7 @@ function Header() {
       <div className="max-w-[1440px] mx-auto px-3 lg:px-20 flex items-center justify-between py-5  border-t-2 mt-10 border-[#adadad]">
         <div className="lg:pt-5 flex justify-between w-full">
           <div>
-            <Link href="/">
+            <Link href={routes.home}>
               <Logo fill="var(--primary)" innerfill="var(--white)" />
             </Link>
           </div>
