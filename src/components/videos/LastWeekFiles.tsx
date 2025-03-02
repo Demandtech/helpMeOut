@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import VideoReview from "./VideoReview";
 import { VideoList } from "@/types/app";

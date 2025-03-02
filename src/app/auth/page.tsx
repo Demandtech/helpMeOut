@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { useForm, yupResolver } from "@/configs/service";
 import { authSchema, AuthFormData } from "@/schemas/auth";
 import Link from "next/link";
+import routes from "@/configs/routes";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -29,7 +30,7 @@ export default function LoginPage() {
   const handleAuthentication = (data: AuthFormData) => {
     if (data) {
       console.log(data);
-      router.push("/repositories/private/files");
+      router.push(routes.recent_files);
     }
   };
 

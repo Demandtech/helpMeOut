@@ -11,6 +11,7 @@ import {
 import Avatar from "@/components/ui/Avatar";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import routes from "@/configs/routes";
 
 function MenuDropdown({
   setOpenMenu,
@@ -36,7 +37,7 @@ function MenuDropdown({
         setSubMenu((prev) => !prev);
         break;
       case "logout":
-        router.push("/auth");
+        router.push(routes.auth);
         break;
       default:
         break;

@@ -8,43 +8,52 @@ export const metadata = {
 
 const recents: VideoList = [
   {
+    id: "1",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample1.png",
   },
   {
+    id: "2",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample2.png",
   },
   {
+    id: "3",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample1.png",
   },
   {
+    id: "4",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample2.png",
   },
 ];
+
 const lastweek: VideoList = [
   {
+    id: "1",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample1.png",
   },
   {
+    id: "2",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample2.png",
   },
   {
+    id: "3",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample1.png",
   },
   {
+    id: "4",
     title: "How to create Facebook Ad listing",
     date: "SEPTEMBER 23, 2023",
     img: "/sample2.png",

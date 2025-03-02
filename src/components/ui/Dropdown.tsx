@@ -20,7 +20,6 @@ interface AppProps {
 }
 
 export default function App({ triggerContent, items, onSelect }: AppProps) {
-
   return (
     <Dropdown radius="sm">
       <DropdownTrigger>{triggerContent}</DropdownTrigger>

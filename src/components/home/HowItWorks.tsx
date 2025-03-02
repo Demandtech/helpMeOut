@@ -5,7 +5,7 @@ import Image from "next/image";
 
 function HowItWorks() {
   const ref = useRef(null);
-  const isListInView = useInView(ref, { once: false });
+  const isListInView = useInView(ref, { once: true });
 
   const transition = {
     duration: 0.5,

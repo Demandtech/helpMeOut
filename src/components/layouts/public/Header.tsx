@@ -1,6 +1,7 @@
 "use client";
 import { Logo } from "@/components/svgs";
 import Button from "@/components/ui/Button";
+import routes from "@/configs/routes";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -32,7 +33,7 @@ function Header() {
             className="font-semibold px-0 lg:px-5"
             size="lg"
             radius="none"
-            onPress={() => router?.push("/auth")}
+            onPress={() => router?.push(routes.auth)}
           >
             Get Started
           </Button>
