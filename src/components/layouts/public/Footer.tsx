@@ -7,7 +7,7 @@ function Footer() {
       <div className="max-w-[1440px] mx-auto px-3 lg:px-20 flex flex-col lg:flex-row justify-between py-5 gap-10">
         <div className="lg:pt-5 lg:w-2/5">
           <Link href="/">
-            <Logo innerfill="var(--primary)" fill="var(--white)" />
+            <Logo innerfill="var(--primary-500)" fill="var(--white)" />
           </Link>
         </div>
         <div className="flex flex-wrap lg:flex-row  text-white justify-between lg:w-3/5 gap-5">

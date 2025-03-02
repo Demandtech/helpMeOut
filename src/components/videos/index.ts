@@ -6,3 +6,6 @@ export { default as ShareVideoToSocial } from "./ShareVideoToSocial";
 export { default as VideoTranscript } from "./Transcript";
 export { default as ShareVideo } from "./ShareVideo";
 export { default as VideoImagePreview } from "./VideoImagePreview";
+export { default as SaveVideo } from "./SaveVideo";
+export { default as Transcript } from "./Transcript";
+export { default as VideoPlayer } from "./VideoPlayer";
