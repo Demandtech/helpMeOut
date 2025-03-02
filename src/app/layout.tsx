@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { NextUIProvider } from "@nextui-org/system";
 import { Inter, Sora, Work_Sans } from "next/font/google";
 import "./globals.css";
-import { PublicHeader, PublicFooter } from "@/components/layouts";
 
 const inter = Inter({ subsets: ["latin"] });
 const sora = Sora({ subsets: ["latin"] });
@@ -72,9 +71,9 @@ export default function RootLayout({
       <link rel="manifest" href="/favicons/site.webmanifest" />
       <body>
         <NextUIProvider>
-          <PublicHeader />
+          {/* <PublicHeader /> */}
           {children}
-          <PublicFooter />
+          {/* <PublicFooter /> */}
         </NextUIProvider>
       </body>
     </html>
