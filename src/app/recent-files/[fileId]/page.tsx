@@ -1,9 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { EditIcon } from "@/components/svgs";
-import { Button } from "@nextui-org/button";
+import { Button, Input } from "@/components/ui";
 
 import {
   ShareVideoToSocial,
@@ -15,6 +14,7 @@ import routes from "@/configs/routes";
 
 function SingleFile() {
   const [canShare, setCanShare] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
 
   useEffect(() => {
     console.log(navigator.share);
@@ -41,11 +41,32 @@ function SingleFile() {
         </span>
       </div>
       <div>
-        <div className="flex items-center gap-6 mb-6">
-          <h3 className="text-black font-semibold text-sm lg:text-2xl font-sora">
-            How To Create A Facebook Ad Listing
-          </h3>
-          <Button isIconOnly variant="light">
+        <div className="flex items-center gap-6 mb-6 max-w-[600px]">
+          {!isEdit ? (
+            <p className="text-black font-semibold text-sm lg:text-2xl font-sora w-full h-[48px] pt-2">
+              How To Create A Facebook Ad Listing
+            </p>
+          ) : (
+            <form className="w-full">
+              <Input
+                placeholder="Enter video name"
+                labelPlacement="outside"
+                size="lg"
+                radius="sm"
+                value={"How To Create A Facebook Ad Listing ".trim()}
+                className=""
+                classNames={{
+                  input: "text-2xl font-medium text-primary-400",
+                }}
+                endContent={
+                  <Button type="submit" size="sm" radius="sm" color="primary">
+                    save
+                  </Button>
+                }
+              />
+            </form>
+          )}
+          <Button onPress={() => setIsEdit(!isEdit)} isIconOnly variant="light">
             <EditIcon />
           </Button>
         </div>
