@@ -6,7 +6,7 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-} from "@nextui-org/dropdown";
+} from "@heroui/dropdown";
 
 interface DropdownItemType {
   key: string;

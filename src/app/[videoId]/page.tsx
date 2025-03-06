@@ -108,9 +108,13 @@ function SingleFile() {
                         size="sm"
                         variant="bordered"
                         radius="sm"
+                        className="min-w-[97.75]"
+                        // startContent={<CopyIcon className="w-8"/>}
                       >
-                        <CopyIcon />
-                        {buttonText}
+                        <div className="flex gap-2 px-1 items-center">
+                          <CopyIcon />
+                          {buttonText}
+                        </div>
                       </Button>
                     }
                     placeholder=""

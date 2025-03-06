@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, Key } from "react";
-import { Listbox, ListboxItem, ListboxSection } from "@nextui-org/listbox";
+import { Listbox, ListboxItem, ListboxSection } from "@heroui/listbox";
 import {
   ChevronDown,
   ChevronRight,

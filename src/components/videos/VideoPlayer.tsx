@@ -1,6 +1,13 @@
 "use client";
 import { useState, useRef } from "react";
 import { Button } from "../ui";
+import {
+  PauseIcon,
+  PlayIcon,
+  MutedIcon,
+  VolumeIcon,
+  SettingIcon,
+} from "../svgs";
 
 function VideoPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -74,13 +81,27 @@ function VideoPlayer() {
         </div>
         <div className="flex">
           <Button size="sm" onPress={togglePlayPause} variant="light">
-            <span>{isPlaying ? "Pause" : "Play"}</span>
+            <div className="flex items-center flex-col">
+              {isPlaying ? <PauseIcon /> : <PlayIcon className="" />}
+              <span>{isPlaying ? "Pause" : "Play"}</span>
+            </div>
           </Button>
           <Button size="sm" onPress={toggleMute} variant="light">
-            <span>{isMuted ? "Unmute" : "Volume"}</span>
+            <div className="flex items-center flex-col">
+              {isMuted ? (
+                <MutedIcon className="stroke-black" />
+              ) : (
+                <VolumeIcon className="stroke-black" />
+              )}
+
+              <span> Volume</span>
+            </div>
           </Button>
           <Button size="sm" variant="light">
-            <span>Settings</span>
+            <div className="flex items-center flex-col">
+              <SettingIcon className="stroke-black" />
+              <span>Settings</span>
+            </div>
           </Button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { NextUIProvider } from "@nextui-org/system";
+import { HeroUIProvider } from "@heroui/system";
 import { Inter, Sora, Work_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -70,11 +70,11 @@ export default function RootLayout({
       />
       <link rel="manifest" href="/favicons/site.webmanifest" />
       <body>
-        <NextUIProvider>
+        <HeroUIProvider>
           {/* <PublicHeader /> */}
           {children}
           {/* <PublicFooter /> */}
-        </NextUIProvider>
+        </HeroUIProvider>
       </body>
     </html>
   );
