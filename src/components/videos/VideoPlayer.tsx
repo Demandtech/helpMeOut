@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import { Button } from "../ui";
+import { Button, Tooltip } from "../ui";
 import {
   PauseIcon,
   PlayIcon,
@@ -43,6 +43,7 @@ function VideoPlayer() {
 
   const handleLoadedMetadata = () => {
     if (videoRef.current) {
+      console.log(videoRef.current.duration);
       setTotalDuration(videoRef.current.duration);
     }
   };
@@ -56,6 +57,16 @@ function VideoPlayer() {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const toggleFullScreen = () => {
+    if (!videoRef.current) return;
+
+    if (!document.fullscreenElement) {
+      videoRef.current.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
   };
 
   return (
@@ -75,34 +86,44 @@ function VideoPlayer() {
         ></div>
       </div>
       <div className="h-14 lg:h-20 sticky flex justify-between items-center px-5">
-        <div className="min-w-28 text-sm text-[#939393] font-inter font-medium">
-          <span>{formatTime(elapsedTime)}</span> /{" "}
-          <span>{formatTime(totalDuration)}</span>
-        </div>
+        <Tooltip content="Elapsed Time / Total Duration">
+          <div className="min-w-28 text-sm text-[#939393] font-inter font-medium">
+            <span>{formatTime(elapsedTime)}</span> /{" "}
+            <span>{formatTime(totalDuration)}</span>
+          </div>
+        </Tooltip>
         <div className="flex">
-          <Button size="sm" onPress={togglePlayPause} variant="light">
-            <div className="flex items-center flex-col">
-              {isPlaying ? <PauseIcon /> : <PlayIcon className="" />}
-              <span>{isPlaying ? "Pause" : "Play"}</span>
-            </div>
-          </Button>
-          <Button size="sm" onPress={toggleMute} variant="light">
-            <div className="flex items-center flex-col">
-              {isMuted ? (
-                <MutedIcon className="stroke-black" />
-              ) : (
-                <VolumeIcon className="stroke-black" />
-              )}
+          <Tooltip content={isPlaying ? "Pause" : "Play"}>
+            <Button size="sm" onPress={togglePlayPause} variant="light">
+              <div className="flex items-center flex-col">
+                {isPlaying ? <PauseIcon /> : <PlayIcon className="" />}
+                <span>{isPlaying ? "Pause" : "Play"}</span>
+              </div>
+            </Button>
+          </Tooltip>
+          <Tooltip content={isMuted ? "Unmute" : "Mute"}>
+            <Button size="sm" onPress={toggleMute} variant="light">
+              <div className="flex items-center flex-col">
+                {isMuted ? (
+                  <MutedIcon className="stroke-black" />
+                ) : (
+                  <VolumeIcon className="stroke-black" />
+                )}
 
-              <span> Volume</span>
-            </div>
-          </Button>
-          <Button size="sm" variant="light">
-            <div className="flex items-center flex-col">
+                <span> Volume</span>
+              </div>
+            </Button>
+          </Tooltip>
+          <Tooltip content="Full Screen">
+            <Button
+              isIconOnly
+              onPress={toggleFullScreen}
+              size="sm"
+              variant="light"
+            >
               <SettingIcon className="stroke-black" />
-              <span>Settings</span>
-            </div>
-          </Button>
+            </Button>
+          </Tooltip>
         </div>
       </div>
     </div>
