@@ -1,7 +1,7 @@
 "use client";
 
 import { EditIcon } from "@/components/svgs";
-import { Button, Input } from "@/components/ui";
+import { Button, Input, Tooltip } from "@/components/ui";
 import { SaveVideo, ShareVideoToSocial } from "@/components/videos";
 import { Transcript, VideoPlayer } from "@/components/videos";
 import { PublicFooter, PublicHeader } from "@/components/layouts";
@@ -57,15 +57,22 @@ function SingleFile() {
                         classNames={{
                           input: "text-lg font-medium text-primary-400",
                         }}
+                        endContent={
+                          <Button size="sm" color="primary">
+                            save
+                          </Button>
+                        }
                       />
                     )}
-                    <Button
-                      onPress={() => setIsEdit(!isEdit)}
-                      variant="light"
-                      isIconOnly
-                    >
-                      <EditIcon />
-                    </Button>
+                    <Tooltip content="Edit name">
+                      <Button
+                        onPress={() => setIsEdit(!isEdit)}
+                        variant="light"
+                        isIconOnly
+                      >
+                        <EditIcon />
+                      </Button>
+                    </Tooltip>
                   </div>
                 </div>
               </form>
